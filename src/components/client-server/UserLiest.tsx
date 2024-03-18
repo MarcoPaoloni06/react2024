@@ -6,15 +6,6 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { fetchUsers } from "./apis";
 
 
-
-/*
-async function myApiCall() {
-    const response = await fetch("http://example.com/movies.json");
-    const movies = await response.json();
-    console.log(movies);
-  }
-*/
-
 export default function UserList() {
 
     const [list,setList]=useState<UserDTO[]>([]);
