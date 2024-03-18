@@ -1,11 +1,12 @@
 import React from 'react';
-import { ReactDOM } from 'react';
-
-
+import { BrowserRouter, Link, Route, RouterProvider, Routes } from 'react-router-dom';
+import UserList from './components/client-server/UserLiest';
 // import styles from './App.module.scss';
 // import logo from "./assets/logo512.png";
 // import Display from './components/Display';
-//import { useEffect, useMemo, useState } from 'react';
+// import { useEffect } from 'react';
+// import { useState } from 'react';
+// import { useMemo } from 'react';
 // import Counter from './components/Counter';
 // import IntervalCount from './components/Intervalcount';
 // import { TextComponent } from './components/TextComponent';
@@ -13,14 +14,16 @@ import { ReactDOM } from 'react';
 // import { MyCustomInput } from './components/MyCustomInput';
 // import { PersonInput } from './components/PersonInput';
 // import { MiddleComponent } from './components/MiddleComponent';
-import ToDoList from './components/todolist/TodoList';
+// import ToDoList from './components/todolist/TodoList';
+// import { Button } from 'antd';
+
+
 
 
 /*function calcolo(n:number) {
   console.log("esecuzione di calcolo con n:",n);
   return n*2;
 }*/
-
 
 export default function App() {
   //const [textNome,setTextNome] = useState<string>("");
@@ -34,15 +37,31 @@ export default function App() {
   },[value])*/
   
   //se nello useEffect si passa come lista di dipendenze l'array
-  // useEffect(()=>{console.log("useEffect evento di mount");return ()=>{console.log("return dello useEffect in app");}},[])
+  // useEffect(()=>{console.log("useEffect evento di mount con return");return ()=>{console.log("return dello useEffect in app");}},[])
   // useEffect(()=>{console.log("useEffect evento di mount2")},[])
   // console.log("App():");
   return <>
   <div>App Marco Paoloni</div>
-  <ToDoList />
+  <BrowserRouter>
+    <div>
+      <div> <Link to={"/"}>Vai a home</Link></div>
+      <div> <Link to={"userlist"}>Vai a userlist</Link></div>
+      <div> <Link to={"counter"}>Vai a counter</Link></div>
+    </div>
+    <Routes>
+      <Route path="/" element="" /> {/* 👈 Renders at /app/ */}
+      <Route path="/" element="" /> {/* 👈 Renders at /app/ */}
+      <Route path="/" element="" /> {/* 👈 Renders at /app/ */}
+    </Routes>
 
+  </BrowserRouter>
+  
+  
+
+
+  {/*<UserList />*/}
+  {/* <ToDoList /> */}
   {/* <IntervalCount/> */}
-
   {/*<Display />*/}
   {/* <TextComponent /> */}
   {/* MyCustomInput placeholder='Inserisci Nome' label='Nome' required={true}
